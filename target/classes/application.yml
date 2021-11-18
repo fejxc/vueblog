@@ -12,3 +12,10 @@ shiro-redis:
   enabled: true
   redis-manager:
     host: 127.0.0.1:6379
+
+suny:
+  jwt:
+    secret: hjgkyggyiifg
+    # token有效时常 7天
+    expire: 604800
+    header: Authorization
