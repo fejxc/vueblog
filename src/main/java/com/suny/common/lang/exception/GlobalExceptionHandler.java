@@ -44,4 +44,11 @@ public class GlobalExceptionHandler {
         ObjectError objectError = allErrors.stream().findFirst().get();
         return Result.fail(400,objectError.getDefaultMessage(),null);
     }
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(value = IllegalArgumentException.class)
+    public Result handler (IllegalArgumentException e) {
+        log.error("断言时异常————————————");
+        return Result.fail(401,e.getMessage(),null);
+    }
 }
